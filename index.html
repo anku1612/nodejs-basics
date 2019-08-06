@@ -1,0 +1,41 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body style="text-align:center">
+    <h1>this is home page</h1>
+    
+    <form id="myForm">
+        <input type="text" name="username" placeholder="UserName"><br/><br/>
+        <input type="password" name="passwd" placeholder="Password"><br/><br/>
+        <button type="submit">submit it</button><br/><br/>
+    </form>
+
+    <button id="mybtn">post it</button>
+    <script>
+        var data={
+            name:"Akanksha",
+            status:"Software Developer"
+        }
+        document.getElementById("mybtn").onclick =()=>{
+            const url ="http://localhost:5000/sent-data";
+        fetch(url,{
+            method:"post",
+            body:JSON.stringify(data),
+            headers:{
+                'Content-Type':'application/json'
+
+            }
+         }).then(res=>res.json())
+         .then(res2=>console.log(res2));
+
+        }
+        
+     
+    </script>
+  </body>
+</html> -->
