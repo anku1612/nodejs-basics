@@ -10,7 +10,7 @@ module.exports = app => {
   });
 
   app.get("/about", (req, res) => {
-    res.send("about");
+    res.render("about");
   });
 
   app.post("/sent", (req, res) => {
