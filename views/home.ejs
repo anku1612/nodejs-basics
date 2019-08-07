@@ -12,7 +12,7 @@
     <% include partials/nav %>
     <h1>this is home page</h1>
     <form id="form">
-            <input type="text" name="item">
+            <input type="text" name="item" id="something">
   <button type="submit">Add</button>
         </form>
     
@@ -22,22 +22,23 @@
    <% }) %> 
 </ul>
     <script>
-       document.getElementById("myForm").onsubmit =(e)=>{
+       document.getElementById("form").onsubmit=(e)=>{
     e.preventDefault();
       const url = "http://localhost:5000/sent";
-      var data = new URLSearchParams();
-      console.log(data)
-       for(const pair of new FormData(e.target)){
-          // console.log(pair)
-         data.append(pair[0],pair[1])
-       }
+      var something = document.getElementById("something").value;
       fetch(url,{
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
           method:"post",
-          body:data,
+          body:JSON.stringify({habit:something}),
       }).then(res=>res.json())
       .then(res2 => {
           console.log(res2)
-          location.reload()
+          if (res2.status === true) {
+            location.reload()
+          }
       }); 
   }
    

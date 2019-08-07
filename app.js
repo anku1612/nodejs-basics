@@ -6,8 +6,6 @@ const bodyParser = require("body-parser");
 //serving static files
 app.use(express.static("public"));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-
 // parse application/json
 app.use(bodyParser.json());
 

@@ -14,16 +14,8 @@ module.exports = app => {
   });
 
   app.post("/sent", (req, res) => {
-    const Item = new Wish({
-      wish: req.body.item
-    });
-    Item.save()
-      .then(data => {
-        console.log("saved");
-        res.send(data);
-      })
-      .catch(err => {
-        throw err;
-      });
+    console.log(req.body.habit)
+    data.push(req.body.habit)
+    res.json({status:true})
   });
 };
